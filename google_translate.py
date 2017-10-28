@@ -27,7 +27,7 @@ def show_image():
 
     def callback(event):
         print ("clicked at", event.x, event.y)
-        webbrowser.open('https://translate.google.com/?hl=en&tab=wT#auto/'+'zh-CN/'+unicode(pyperclip.paste()))
+        #webbrowser.open('https://translate.google.com/?hl=en&tab=wT#auto/'+'zh-CN/'+unicode(pyperclip.paste()))
         #problem:
         # 1. 对于使用浏览器访问有‘/’字符时需要转义 :slove: '/' --> '%2F'
         # 2. 使用api时有代理问题
