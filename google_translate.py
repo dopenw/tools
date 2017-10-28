@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from tkinter import *
 import pyperclip
 import webbrowser
@@ -27,7 +28,8 @@ def show_image():
 
     def callback(event):
         print ("clicked at", event.x, event.y)
-        webbrowser.open('https://translate.google.com/?hl=en&tab=wT#auto/'+'zh-CN/'+unicode(pyperclip.paste()))
+        #该方法目前不可取，需要对每个特殊字符进行处理，后续应该采用调用google_translate api的方式来处理
+        # webbrowser.open('https://translate.google.com/?hl=en&tab=wT#auto/'+'zh-CN/'+pyperclip.paste())
         #problem:
         # 1. 对于使用浏览器访问有‘/’字符时需要转义 :slove: '/' --> '%2F'
         # 2. 使用api时有代理问题
@@ -56,7 +58,7 @@ def show_image():
     canvas.bind('<B3-Motion>',dragwin)
 
 
-    photo = PhotoImage(file = './test1.png')
+    photo = PhotoImage(file = './google_translate.png')
     canvas.create_image(25,25,image=photo)
     canvas.pack()
 
